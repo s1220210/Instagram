@@ -6,6 +6,7 @@
 //  Copyright © 2018年 owner. All rights reserved.
 //
 
+import Firebase
 import UIKit
 
 @UIApplicationMain
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        // Adobeの管理画面で登録したアプリの API key と Client secret の文字列を設定する
+        AdobeUXAuthManager.shared().setAuthenticationParametersWithClientID("登録したアプリの API key", withClientSecret: "登録したアプリの Client secret")
+
         return true
     }
 
